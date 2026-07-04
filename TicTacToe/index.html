@@ -124,12 +124,6 @@
     font-weight: 700;
   }
 
-  label {
-    font-size: 0.9rem;
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-  }
 </style>
 </head>
 <body>
@@ -147,17 +141,12 @@
 
   <div id="controls">
     <button class="action" id="resetBtn">Reset Round</button>
-    <label>
-      <input type="checkbox" id="vsCpu">
-      Play vs CPU
-    </label>
   </div>
 
   <script>
     const boardEl = document.getElementById('board');
     const statusEl = document.getElementById('status');
     const resetBtn = document.getElementById('resetBtn');
-    const vsCpuCheckbox = document.getElementById('vsCpu');
     const scoreXEl = document.getElementById('scoreX');
     const scoreOEl = document.getElementById('scoreO');
     const scoreDrawEl = document.getElementById('scoreDraw');
@@ -224,7 +213,7 @@
       currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
       statusEl.textContent = `${currentPlayer}'s turn`;
 
-      if (vsCpuCheckbox.checked && currentPlayer === 'O' && !gameOver) {
+      if (currentPlayer === 'O' && !gameOver) {
         setTimeout(cpuMove, 350);
       }
     }
@@ -242,6 +231,7 @@
         result.line.forEach(i => cellButtons[i].classList.add('win'));
       }
       render();
+      setTimeout(resetRound, 1500);
     }
 
     function cpuMove() {
