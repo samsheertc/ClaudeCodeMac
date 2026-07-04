@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Retro Gunner</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="gameCanvas" width="900" height="600"></canvas>
+    <div class="scanlines"></div>
+
+    <div id="hud" class="hidden">
+      <div id="hud-health-wrap">
+        <div id="hud-health-label">HEALTH</div>
+        <div id="hud-health-bar"><div id="hud-health-fill"></div></div>
+      </div>
+      <div id="hud-level">LEVEL <span id="hud-level-num">1</span></div>
+      <div id="hud-score">SCORE <span id="hud-score-num">0</span></div>
+    </div>
+
+    <div id="menu-screen" class="overlay">
+      <h1 class="title">RETRO GUNNER</h1>
+      <p class="subtitle">A top-down shooting arcade</p>
+      <ul class="controls-list">
+        <li><span>MOVE</span> Arrow Keys / WASD</li>
+        <li><span>AIM</span> Mouse</li>
+        <li><span>SHOOT</span> Click / Hold Mouse</li>
+        <li><span>PAUSE</span> Esc</li>
+      </ul>
+      <button class="action-btn" id="startBtn">START GAME</button>
+    </div>
+
+    <div id="pause-screen" class="overlay hidden">
+      <h2 class="title">PAUSED</h2>
+      <p class="subtitle">Press Esc to resume</p>
+      <button class="action-btn" id="resumeBtn">RESUME</button>
+    </div>
+
+    <div id="levelComplete-screen" class="overlay hidden">
+      <h2 class="title">LEVEL <span id="lc-level-num">1</span> COMPLETE!</h2>
+      <p class="subtitle" id="lc-score-line">Score: 0</p>
+      <button class="action-btn" id="continueBtn">CONTINUE</button>
+    </div>
+
+    <div id="gameOver-screen" class="overlay hidden">
+      <h2 class="title danger">GAME OVER</h2>
+      <p class="subtitle" id="go-score-line">Final Score: 0</p>
+      <button class="action-btn" id="retryBtn">PLAY AGAIN</button>
+    </div>
+
+    <div id="win-screen" class="overlay hidden">
+      <h2 class="title win">YOU WIN!</h2>
+      <p class="subtitle">All levels cleared</p>
+      <p class="subtitle" id="win-score-line">Final Score: 0</p>
+      <button class="action-btn" id="playAgainBtn">PLAY AGAIN</button>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
