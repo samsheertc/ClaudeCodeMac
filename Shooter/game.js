@@ -408,11 +408,11 @@
   // ---------------------------------------------------------------------
 
   function drawBackground() {
-    ctx.fillStyle = "#0d1017";
+    ctx.fillStyle = "#f0f4f8";
     ctx.fillRect(0, 0, W, H);
 
     const grid = 40;
-    ctx.strokeStyle = "rgba(255,255,255,0.04)";
+    ctx.strokeStyle = "rgba(0,0,0,0.06)";
     ctx.lineWidth = 1;
     for (let x = 0; x <= W; x += grid) {
       ctx.beginPath();
